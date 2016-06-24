@@ -25,17 +25,17 @@ class EUCookieBarPlugin extends Omeka_Plugin_AbstractPlugin
 public function hookPublicHead() {
 
 
-    queue_js_file('lib/jquery.cookiebar');
-    queue_js_file('config');
+    queue_js_file('vendor/jquery.cookiebar');
+    queue_js_file('dist/cookieMessage');
 
-    queue_css_file('lib/jquery.cookiebar');
+    queue_css_file('vendor/jquery.cookiebar');
 
 }
 public function hookNeatlinePublicStatic($exhibit){
-    queue_js_file('lib/jquery.cookiebar');
-    queue_js_file('config');
+    queue_js_file('vendor/jquery.cookiebar');
+    queue_js_file('dist/cookieMessage');
 
-    queue_css_file('lib/jquery.cookiebar');
+    queue_css_file('vendor/jquery.cookiebar');
 
 }
 
