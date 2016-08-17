@@ -9,6 +9,7 @@ class EUCookieBarPlugin extends Omeka_Plugin_AbstractPlugin
 {
     protected $_hooks = array(
         'public_head',
+        'public_footer',
         'neatline_public_static',
         'install', 
         'config', 
@@ -30,9 +31,12 @@ class EUCookieBarPlugin extends Omeka_Plugin_AbstractPlugin
      */
 
     public function hookPublicHead() {
-        echo get_view()->partial('cookie_bar.php', array( "message" => get_option("cookie_message")));
         queue_js_file('vendor/jquery.cookiebar');    
         queue_css_file('vendor/jquery.cookiebar');
+    }
+
+    public function hookPublicFooter() {
+        echo get_view()->partial('cookie_bar.php', array( "message" => get_option("cookie_message")));
     }
 
     public function hookNeatlinePublicStatic($exhibit){
