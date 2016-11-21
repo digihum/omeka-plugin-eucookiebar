@@ -18,7 +18,7 @@ class EUCookieBarPlugin extends Omeka_Plugin_AbstractPlugin
     );
 
     /**
-     * @var array  Options that are used in the ldap plugin.
+     * @var array  Options that are used in the eucookiebar plugin.
      */
     protected $_options = array(
         'cookie_message' => 'We use cookies to track usage of this academic project.',

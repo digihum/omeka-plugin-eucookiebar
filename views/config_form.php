@@ -1,4 +1,7 @@
 <?php
+
+// Configuration form
+
 $fields = array(
 	array(
 		'label' => 'Cookie bar message',
@@ -7,6 +10,8 @@ $fields = array(
 		'required' => true
 	)
 );
+
+
 foreach ($fields as $row): ?>
 
 <div class="field">
