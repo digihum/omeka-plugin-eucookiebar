@@ -31,19 +31,18 @@ class EUCookieBarPlugin extends Omeka_Plugin_AbstractPlugin
      */
 
     public function hookPublicHead() {
-        queue_js_file('vendor/cookieconsent-v2.9.1');    
-        queue_css_file('vendor/cookieconsent-v2.9.1');
-        echo get_view()->partial('cookie_bar.php', array( "message" => get_option("cookie_message")));
+        queue_js_file('vendor/jquery.cookiebar');    
+        queue_css_file('vendor/jquery.cookiebar');
     }
 
     public function hookPublicFooter() {
-        
+        echo get_view()->partial('cookie_bar.php', array( "message" => get_option("cookie_message")));
     }
 
     public function hookNeatlinePublicStatic($exhibit){
         echo get_view()->partial('cookie_bar.php', array( "message" => get_option("cookie_message")));
-        queue_js_file('vendor/cookieconsent-v2.9.1');
-        queue_css_file('vendor/cookieconsent-v2.9.1');
+        queue_js_file('vendor/jquery.cookiebar');
+        queue_css_file('vendor/jquery.cookiebar');
 
     }
 
@@ -53,9 +52,7 @@ class EUCookieBarPlugin extends Omeka_Plugin_AbstractPlugin
     public function hookInstall()
     {
         $this->_installOptions();
-        set_option('cookie_configuration', defaultConsent());
     }
-
     /**
      * Uninstalls any options that have been set.
      */
@@ -82,9 +79,5 @@ class EUCookieBarPlugin extends Omeka_Plugin_AbstractPlugin
         require dirname(__FILE__) . DIRECTORY_SEPARATOR . 'views'. DIRECTORY_SEPARATOR . 'config_form.php';
     }
 
-    private function defaultConfig()
-    {
-        return require dirname(__FILE__) . DIRECTORY_SEPARATOR . 'views'. DIRECTORY_SEPARATOR . 'javascripts' . DIRECTORY_SEPARATOR . 'vendor'. DIRECTORY_SEPARATOR . 'cookieconsent-init.js';
-    }
 
 }
