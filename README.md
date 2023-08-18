@@ -1,6 +1,15 @@
 # omeka-plugin-eucookiebar
 
-Simple plugin to add the jQuery cookiebar widget to Omeka sites.
+Version 2 of the EUCookieBar plugin for Omeka Classic is a rewrite by Steve 
+Ranford of the first version authored by Tim Hollies. This module is sponsored
+by  Research Computing at the University of Warwick.
+
+The plugin is a wrapper for the GDPR/CCPA compliant 
+[cookie consent plugin](https://github.com/orestbida/cookieconsent) 
+written in plain javascript by [Orest Bida](https://ko-fi.com/orestbida).
+
+It is built for bundling with Google Analytics and at this stage isn't 
+configurable for other options.
 
 ## Installation
 
@@ -8,11 +17,18 @@ Clone or download and extract a zip of the repository into it in the Omeka
 `plugins` directory and rename the directory from `omeka-plugin-eucookiebar`
  to `EUCookieBar`.
 
-Enable the plugin in the Omeka plugins interface. There is a single
-configurable setting which is the message that will be displayed in the
-'cookie bar'. By default this is set to 'We use cookies to track usage of 
-this academic project.'.
+Enable the plugin in the Omeka plugins interface. There are a number of 
+configuration options to set. 
+
+## Customisation
+
+Alternatively the `cookieconsent-init.js` and `cookieconsent.css` can be 
+overridden by the theme to further integrate with look and feel of a site. 
 
 ## Dependencies
 
-Each page where this plugin is to be used must also have access to jQuery.
+Version 2 no longer depends on jQuery.
+
+## TODO
+
+  - Use package.json to manage dependencies. 
