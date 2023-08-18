@@ -57,7 +57,9 @@ class EUCookieBarPlugin extends Omeka_Plugin_AbstractPlugin
 
         // get the options from the database
         foreach ($this->_options as $key) 
-            { $get_view_options[$key] = get_option($key); }
+            { $get_view_options[str_replace("cookie_","", $key)] = get_option($key); }
+
+        echo get_view()->partial('init_js.php', $get_view_options);
 
         // don't inject analytics if it's not set
         if (get_option('cookie_analytics') !== "" && get_option('cookie_analytics') !== "UA-XXXXXXXX-X") {
@@ -65,8 +67,7 @@ class EUCookieBarPlugin extends Omeka_Plugin_AbstractPlugin
             echo get_view()->partial('analytics_js.php', $get_view_options);
         }
 
-        // inject options into init via generated js objects
-        echo get_view()->partial('init_js.php', $get_view_options);
+
     }
 
     public function hookPublicFooter() {

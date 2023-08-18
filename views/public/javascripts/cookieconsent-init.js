@@ -1,14 +1,11 @@
-// This is an empty file to be overridden by the theme.
+// This is an template init file that may be overridden by the theme.
 
 window.addEventListener('load', function(){
-    // obtain cookieconsent plugin
-
-    // if $built_in_config is a json object
-    // then it is the built-in config
-    console.log('typeof $gui_options: ' + eval(typeof $gui_options === 'object' && typeof $languages === 'object'));
     
+    // conditional on the presence of objects set by the cookie consent plugin
+
     if(typeof $gui_options === 'object' && typeof $languages === 'object') {
-        console.log('running...');
+
         var cc = initCookieConsent();
         
         cc.run({

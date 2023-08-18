@@ -3,7 +3,6 @@
 // This script creates a configuration object for Cookie Consent from the options provided in the plugin admin interface
 
 var logo = <?php echo js_escape($this->settings_title) ?>;
-var cookie = '🍪';
 
 $gui_options = {
     consent_modal: {
