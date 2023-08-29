@@ -9,7 +9,7 @@
     }],
   "license": "GPLv3",
   "readme": "README.md",
-  "version": "2.0.0-beta.2",
+  "version": "2.0.0-beta.3",
   "require": {
     "omeka/omeka": ">=2.0"
   },
